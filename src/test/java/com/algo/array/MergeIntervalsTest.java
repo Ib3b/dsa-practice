@@ -5,14 +5,14 @@ import com.algo.base.AlgorithmTestBase;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
-class TwoSumTest extends AlgorithmTestBase<TwoSumCase> {
+class MergeIntervalsTest extends AlgorithmTestBase<MergeIntervalsCase> {
 
     @Test
-    void testTwoSum() {
-        TestData<TwoSumCase> testData = loadTestData("com/algo/array/two-sum.yaml");
-        TwoSum solver = new TwoSum();
+    void testMerge() {
+        TestData<MergeIntervalsCase> testData = loadTestData("com/algo/array/merge-intervals.yaml");
+        MergeIntervals solver = new MergeIntervals();
         verifyAll(testData, tc -> {
-            int[] result = solver.twoSum(tc.inputs().nums(), tc.inputs().target());
+            int[][] result = solver.merge(tc.inputs().intervals());
             assertArrayEquals(tc.expected(), result);
         });
     }

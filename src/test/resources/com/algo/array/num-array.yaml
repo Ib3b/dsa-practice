@@ -1,0 +1,16 @@
+algorithm: num-array
+type: com.algo.array.NumArrayCase
+description: "区间求和 - 计算数组 [left, right] 范围内元素之和"
+cases:
+  - inputs: { nums: [-2, 0, 3, -5, 2, -1], left: 0, right: 2 }
+    expected: 1
+  - inputs: { nums: [-2, 0, 3, -5, 2, -1], left: 2, right: 5 }
+    expected: -1
+  - inputs: { nums: [-2, 0, 3, -5, 2, -1], left: 0, right: 5 }
+    expected: -3
+  - inputs: { nums: [5], left: 0, right: 0 }
+    expected: 5
+  - inputs: { nums: [1, 2, 3, 4, 5], left: 1, right: 3 }
+    expected: 9
+  - inputs: { nums: [-5, -3, -1], left: 0, right: 2 }
+    expected: -9
