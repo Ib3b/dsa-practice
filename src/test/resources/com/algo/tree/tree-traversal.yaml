@@ -1,0 +1,34 @@
+algorithm: tree-traversal
+type: com.algo.tree.TreeTraversalCase
+description: "二叉树遍历测试（pre/in/post-order），用 traversalType 区分"
+columns:
+  inputs:
+    tree: Integer[]
+    traversalType: String
+  expected: int[]
+cases:
+  # 标准树: 3 → { left: 9, right: 20 → { left: 15, right: 7 } }
+  - [[3,9,20,null,null,15,7], "pre", [3,9,20,15,7]]
+  - [[3,9,20,null,null,15,7], "in", [9,3,15,20,7]]
+  - [[3,9,20,null,null,15,7], "post", [9,15,7,20,3]]
+
+  # 单节点
+  - [[1], "pre", [1]]
+  - [[1], "in", [1]]
+  - [[1], "post", [1]]
+
+  # 右斜树: 1 → 2 → 3（全部只有右孩子）
+  # inorder 等同于从左到右遍历，所以是 [1,2,3]
+  - [[1,null,2,null,3], "pre", [1,2,3]]
+  - [[1,null,2,null,3], "in", [1,2,3]]
+  - [[1,null,2,null,3], "post", [3,2,1]]
+
+  # 右斜树: 3 → 2 → 1
+  - [[3,2,null,1], "pre", [3,2,1]]
+  - [[3,2,null,1], "in", [1,2,3]]
+  - [[3,2,null,1], "post", [1,2,3]]
+
+  # 完全二叉树: 1,2,3,4,5,6,7
+  - [[1,2,3,4,5,6,7], "pre", [1,2,4,5,3,6,7]]
+  - [[1,2,3,4,5,6,7], "in", [4,2,5,1,6,3,7]]
+  - [[1,2,3,4,5,6,7], "post", [4,5,2,6,7,3,1]]

@@ -1,0 +1,16 @@
+algorithm: coin-change
+type: com.algo.dp.CoinChangeCase
+description: "凑零钱 - 自底向上 DP"
+columns:
+  inputs:
+    coins: int[]
+    amount: int
+  expected: int
+cases:
+  - [[1, 2, 5], 11, 3]
+  - [[2], 3, -1]
+  - [[1], 0, 0]
+  - [[1], 1, 1]
+  - [[1, 5, 10, 25], 63, 6]
+  - [[3], 2, -1]
+  - [[2, 5, 10, 1], 27, 4]
